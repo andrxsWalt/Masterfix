@@ -19,3 +19,5 @@ class Estado_Reporte(models.Model):
     Detalle = models.CharField(max_length=255)
     def __str__(self):
         return self.Nombre
+    
+# Comentario de prueba
