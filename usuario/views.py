@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Usuario, Rol, Descripción_rol
-from .serializers import UsuarioSerializer, RolSerializer, DescripcionRolSerializer
+from .models import Usuario, Rol, DescripciónRol
+from .serializers import UsuarioSerializer, RolSerializer, DescripciónRolSerializer
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
@@ -12,5 +12,5 @@ class RolViewSet(viewsets.ModelViewSet):
     serializer_class = RolSerializer
 
 class DescripcionRolViewSet(viewsets.ModelViewSet):
-    queryset = Descripción_rol.objects.all()
-    serializer_class = DescripcionRolSerializer
+    queryset = DescripciónRol.objects.all()
+    serializer_class = DescripciónRolSerializer

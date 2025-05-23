@@ -13,12 +13,12 @@ class Usuario(models.Model):
 
 class Rol(models.Model):
     nombreRol = models.CharField(max_length=100)
-    descripcionRol = models.ForeignKey('Descripción_rol', on_delete=models.CASCADE)
+    descripcionRol = models.ForeignKey('DescripciónRol', on_delete=models.CASCADE)
     reportes = models.ForeignKey('reportes.Reportes', on_delete=models.CASCADE)
     def __str__(self):
         return self.nombreRol().__str__()
 
-class Descripción_rol(models.Model):
+class DescripciónRol(models.Model):
     sector = models.CharField(max_length=100)
     def __str__(self):
         return self.sector().__str__()

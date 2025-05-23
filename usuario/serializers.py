@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from usuario.models import Usuario, Rol, Descripción_rol
+from usuario.models import Usuario, Rol, DescripciónRol
 
-class usuarioserializers(serializers.ModelSerializers):
+class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         models = Usuario
         fields = ['documento', 'nombre', 'correo', 'Telefono','rol']
 
-class Rolserializers(serializers.ModelSerializers):
+class RolSerializer(serializers.ModelSerializer):
     class Meta:
         models = Rol
         fields = ['id', 'nombreRol', 'descripcionRol', 'reportes']
 
-class Descripción_rolserializers(serializers.ModelSerializers):
+class DescripciónRolSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Descripción_rol
+        models = DescripciónRol
         fields = ['id', 'sector']

@@ -1,6 +1,7 @@
 from django.db import models
 from PIL import Image
 
+#Comentario prueba
 
 # Create your models here.
 class Reportes(models.Model):
