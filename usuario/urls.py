@@ -1,10 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import (
-    UsuarioListCreateView, UsuarioRetrieveUpdateDestroyView,
-    RolListCreateView, RolRetrieveUpdateDestroyView,
-    DescripcionRolListCreateView, DescripcionRolRetrieveUpdateDestroyView
-)
+from .views import (UsuarioListCreateView, RolListCreateView, DescripcionRolListCreateView)
 
 router = DefaultRouter()
 router.register(r'usuarios', UsuarioListCreateView)
