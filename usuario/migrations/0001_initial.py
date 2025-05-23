@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='DescripciónRol',
+            name='DescripcionRol',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('sector', models.CharField(max_length=100)),
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nombreRol', models.CharField(max_length=100)),
-                ('descripcionRol', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='usuario.DescripciónRol')),
+                ('descripcionRol', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='usuario.DescripcionRol')),
                 ('reportes', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='reportes.reportes')),
             ],
         ),
