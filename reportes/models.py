@@ -9,13 +9,21 @@ class Reportes(models.Model):
     Evidencia = models.ImageField(upload_to='evidencias', null=True, blank=True) #Tipo de campo imagen, que usa la librería Pillow
     Ubicacion = models.CharField(max_length=100)
     Tipo = models.CharField(max_length=100)
-    Estado_Reporte = models.ForeignKey('Estado_Reporte', on_delete=models.CASCADE) #La llave foránea con la siguiente tabla
+    #Permite controlar el estado de los reportes
+    ESTADO_PENDIENTE= "Pendiente"
+    ESTADO_EnProceso= "En proceso"
+    ESTADO_Solucionado= "Solucionado" #Nuevo estado agregado para mayor granularidad
+
+    ESTADO_CHOICES=[
+        (ESTADO_PENDIENTE, "Pendiente"),
+        (ESTADO_EnProceso, "En proceso"),
+        (ESTADO_Solucionado, "Solucionado"), #Puede ver usuarios, pero no modificarlos
+    ]
+    Estado_Reporte = models.CharField(
+        max_length=15,
+        choices=ESTADO_CHOICES,
+        default=ESTADO_PENDIENTE, #Por defecto, los nuevos reportes serán estado pendiente
+        help_text="Define en que estado se encuentra el reporte"
+    )
     def __str__(self):
         return self.Fecha_creacion
-
-# Tabla del estado que pueden tener los reportes, como "Pendiente", "En Proceso" y "Solucionado"
-class Estado_Reporte(models.Model):
-    Nombre = models.CharField(max_length=50)
-    Detalle = models.CharField(max_length=255) #Detalle de cómo va el reporte
-    def __str__(self):
-        return self.Nombre

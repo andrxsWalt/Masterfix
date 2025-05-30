@@ -1,12 +1,6 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import (UsuarioListCreateView, RolListCreateView, DescripcionRolListCreateView)
-
-router = DefaultRouter()
-router.register(r'usuarios', UsuarioListCreateView)
-router.register(r'roles', RolListCreateView)
-router.register(r'descripciones', DescripcionRolListCreateView)
+from django.urls import path
+from .views import UsuarioListCreateView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('usuario/', UsuarioListCreateView.as_view(), name ='UsuarioListCreate'),
 ]
