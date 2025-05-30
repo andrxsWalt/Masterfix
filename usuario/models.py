@@ -1,6 +1,7 @@
 from django.db import models
 
 
+#La clase usuario define qué componentes tienen las personas que se pueden registrar en la plataforma, como lo son instructores, adminisitradores y operadores
 class Usuario(models.Model):
     documento = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
