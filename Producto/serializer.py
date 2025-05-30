@@ -2,14 +2,6 @@ from rest_framework import serializers
 from .models import Categoria, Producto, Venta 
 
 
-# Serializador para el modelo Categoria
-# Convierte los datos de la categoría (nombre y descripción) en formato JSON y viceversa
-class CategoriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ['nombre', 'descripcion']
-
-
 # Serializador para el modelo Producto
 # Convierte los datos del producto en formato JSON y viceversa
 # Incluye nombre, descripción, stock, precio, fechas, categoría y persona asociada
