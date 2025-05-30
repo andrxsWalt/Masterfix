@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     
     # Añadir las apps para que los detente en la migración
-    'usuario', 
+    'usuarioMastefix', 
     'reportes'
 ]
 
