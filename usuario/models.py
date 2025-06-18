@@ -22,7 +22,8 @@ class Usuario(models.Model):
         max_length=25,
         choices=ROLE_CHOICES,
         default=ROLE_APRENDIZ,
-        help_text="Define el nivel de acceso del usuario"
+        help_text="Define el nivel de acceso del usuario",
+        null= False
     )
     USERNAME_FIELD = "Documento"
     REQUIRED_FIELDS=["username"]

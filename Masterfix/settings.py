@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    
     # Añadir las apps para que los detente en la migración
-    'usuarioMastefix', 
+    'usuario', 
     'reportes'
 ]
 
